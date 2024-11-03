@@ -1,8 +1,13 @@
-const parent = React.createElement("div", {id: "parent"}, 
-      React.createElement("div", {id: "child1"}, 
-      [React.createElement("h1", {}, "I'm a h1 tag"), 
-      React.createElement("h1", {}, "I'm a h1 tag")]));
+import react from "react";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const App = () => {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
+};
 
-root.render(parent);
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);

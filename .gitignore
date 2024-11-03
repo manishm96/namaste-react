@@ -1,0 +1,5 @@
+# All the files that needs to be ignored by git
+
+/node_modules
+/.parcel-cache
+/dist
