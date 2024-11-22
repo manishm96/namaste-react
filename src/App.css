@@ -51,6 +51,8 @@
 
 .filter-btn {
   padding: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
   cursor: pointer;
 }
 .shimmer-card {
@@ -64,4 +66,19 @@
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.login-btn {
+  padding: 5 25px;
+  cursor: pointer;
+}
+
+.search-btn {
+  cursor: pointer;
+  margin: 5px;
+  padding: 5 5px;
+}
+
+.search-bar {
+  padding: 5px;
 }
