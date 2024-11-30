@@ -1,7 +1,12 @@
 import react from "react";
 import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import About from "./components/About";
+import Cart from "./components/Cart";
 import Body from "./components/Body";
+import RestaurantMenu from "./components/RestaurantMenu";
+import Error from "./components/Error";
 import "./App.css";
 
 /*
@@ -29,13 +34,39 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
 
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/restaurants/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+
 const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<RouterProvider router={routes} />);
 
 /**
  * Key Points:
